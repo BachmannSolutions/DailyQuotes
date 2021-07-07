@@ -27,14 +27,16 @@ quotes_file.close()
 
 
 print("Welcome to your Daily Quote Generator!")
-print("\tEnter YES to view your daily quote")
-print("\tEnter NO to quit\n")
+print("\t**Enter YES to view your daily quote**")
+print("\t**Enter NO to quit**\n")
 
+user_response_yes_count = 0
 
 while True:
     user_response = input("Would you like to see your quote of the day?:  ")
     user_response = user_response.upper()
-    user_response_yes_count = 1
+
+# TODO: look into  this not adding as expected
 
     if user_response == "NO":
         print("\nThanks for visiting! Be sure to come back tomorrow for your new quote!\n")
@@ -42,14 +44,15 @@ while True:
 
 #TODO: Where do I add this to direct user to QUIT or YES
 #        raise ValueError("Be sure to enter QUIT to quit or YES to view quote of the day")
-    
-#    if user_response == "YES":
-    if user_response_yes_count > 2:
-        print("\nYour quote of the day is:  {}".format(data))
-        print("")
-        user_response_yes_count += 1
 
-    #TODO: if user already got a response, and says 'yes' again, can I say "Sorry. You have to wait til tomorrow"
     if user_response == "YES":
-        print("Sorry. You have to wait until tomorrow to recieve your next quote. \n")
-        sys.exit()
+        user_response_yes_count += 1
+        if user_response_yes_count <= 2:
+            print("\nYour quote of the day is:  {}".format(data))
+            print("")
+            user_response_yes_count += 1
+        # If user already got a quote for the day, ask to come back again tomorrow
+        else:
+            print("Sorry. You have to wait until tomorrow to recieve your next quote. \n")
+            sys.exit()
+
