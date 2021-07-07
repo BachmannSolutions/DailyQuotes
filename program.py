@@ -6,7 +6,7 @@ quotes_file = open("quotes_file.txt", encoding="utf-8")
 data = quotes_file.read()
 quotes_file.close()
 
-menu = "\t**Enter YES to view your daily quote**\n\t**Enter NO to quit**\n"
+menu = "MENU:\tEnter YES to view your daily quote\n\tEnter NO to quit\n"
 
 #quote = re.compile(r"""
 #    ^(?P<quote>([-\w ]*)\t # Quote
@@ -27,7 +27,7 @@ menu = "\t**Enter YES to view your daily quote**\n\t**Enter NO to quit**\n"
 #            print(line)
 
 
-print("Welcome to your Daily Quote Generator!")
+print("\n","*"*41,"\n * Welcome to your Daily Quote Generator *\n","*"*41)
 print(menu)
 
 user_response_yes_count = 0
@@ -48,6 +48,7 @@ while True:
 
     elif user_response == "YES":
         user_response_yes_count += 1
+        # If has not recieved quote for the day, quote becomes available
         if user_response_yes_count <= 2:
             print("\n\tYour quote of the day is:  {}".format(data))
             print("")
