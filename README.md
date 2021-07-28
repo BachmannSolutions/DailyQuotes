@@ -1,7 +1,7 @@
 ## DailyQuotes
-This project is the final requirement for the Code Louisville's May 2021 Python Session.
+This project is the final requirement for the Code Louisville's Python Course.
 
-The intention of this app is to enable the user to view a new quote daily.
+The intention of this project is to share something that is important to my wife and I with others. We are a collector of quotes and I thought this would be a neat way to share quotes we've gathered throughout the years with others. By using the program, the user is enabled to view a new quote daily. 
 
 ## Code Louisville Project Requirements met
 1. Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program

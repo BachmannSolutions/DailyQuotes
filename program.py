@@ -23,7 +23,7 @@ while True:
     user_response = user_response.upper()
 
     if user_response == "NO":
-        print("\nThanks for visiting! Be sure to come back tomorrow for more quotes!\n")
+        print("\n\tThanks for visiting! Be sure to come back tomorrow for more quotes!\n")
         sys.exit()
 
     elif user_response == "MENU":
@@ -34,7 +34,7 @@ while True:
         # If has not recieved quote for the day, quote becomes available
         if user_response_yes_count <= 2:
             quote_idx = random.randint(0,len(quotes)-1)
-            print("\n\tYour quote of the day is:  {}".format(quotes[quote_idx]))
+            print("\n\tYour quote of the day is: {}".format(quotes[quote_idx]))
             print("")
             user_response_yes_count += 1
         # If user already got a quote for the day, ask to come back again tomorrow
@@ -42,4 +42,4 @@ while True:
             print("\n\tSorry. You have to wait until tomorrow to recieve your next quote. \n")
             sys.exit()
     else:
-        print("Be sure to enter: YES to view quote of the day; NO to quit; or MENU for menu ")
+        print("\n\tBe sure to enter: YES to view quote of the day; NO to quit; or MENU for menu \n")
